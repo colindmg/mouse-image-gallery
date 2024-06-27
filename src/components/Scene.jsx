@@ -9,7 +9,12 @@ const Scene = () => {
       <ambientLight intensity={3} />
       <group>
         {creativeImages.map((image, index) => (
-          <DynamicImage key={index} imageUrl={image.image} />
+          <DynamicImage
+            key={index}
+            imageUrl={image.image}
+            imagePosition={image.position}
+            imageScale={image.scale ? image.scale : 1}
+          />
         ))}
       </group>
     </>

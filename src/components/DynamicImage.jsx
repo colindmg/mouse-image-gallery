@@ -20,7 +20,7 @@ const fragmentShader = `
   }
 `;
 
-const DynamicImage = ({ imageUrl }) => {
+const DynamicImage = ({ imageUrl, imagePosition, imageScale }) => {
   const texture = useLoader(TextureLoader, imageUrl);
   const [dimensions, setDimensions] = useState({ width: 3, height: 3 });
 
@@ -33,7 +33,10 @@ const DynamicImage = ({ imageUrl }) => {
   }, [imageUrl]);
 
   return (
-    <mesh>
+    <mesh
+      position={imagePosition ? imagePosition : [0, 0, 0]}
+      scale={imageScale}
+    >
       <planeGeometry args={[dimensions.width, dimensions.height]} />
       <shaderMaterial
         uniforms={{ uTexture: { value: texture } }}
@@ -46,6 +49,8 @@ const DynamicImage = ({ imageUrl }) => {
 
 DynamicImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
+  imagePosition: PropTypes.array,
+  imageScale: PropTypes.number,
 };
 
 export default DynamicImage;
