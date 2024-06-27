@@ -1,6 +1,5 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-
 import Scene from "./components/Scene";
 
 function App() {
