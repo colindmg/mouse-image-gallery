@@ -3,19 +3,19 @@ const creativeImages = [
     name: "Arta Jens",
     twitter: "@artajens",
     image: "/img/artajens.webp",
-    position: [2, 1, -2],
+    position: [1, 1, -2],
   },
   {
     name: "7FRINGZ",
     twitter: "@7Fringz",
     image: "/img/7Fringz.webp",
-    position: [-4, 0, -1],
+    position: [-3.5, 0, -1],
   },
   {
     name: "ISKREAM",
     twitter: "@iskream5",
     image: "/img/iskream5.webp",
-    position: [6, -3, -1],
+    position: [6, -3.5, -1],
   },
   {
     name: "BaastArt",
@@ -27,13 +27,13 @@ const creativeImages = [
     name: "Jake Fried",
     twitter: "@jakejfried",
     image: "/img/jakejfried.webp",
-    position: [0, -5, 0],
+    position: [0.5, -4, 0],
   },
   {
     name: "Jesperish",
     twitter: "@Jesperish",
     image: "/img/Jesperish.webp",
-    position: [7, 4, -2],
+    position: [7, 5, -2],
     scale: 1.3,
   },
   {
@@ -47,6 +47,32 @@ const creativeImages = [
     twitter: "@senssylee",
     image: "/img/senssylee.webp",
     position: [0.5, 5, 0],
+  },
+  {
+    name: "Blank Embrace",
+    twitter: "@BlankEmbrace",
+    image: "/img/blankembrace.webp",
+    position: [-9, 0, -2],
+    scale: 1.3,
+  },
+  {
+    name: "NearBound",
+    twitter: "@nearbound",
+    image: "/img/nearbound.webp",
+    position: [10.5, -2, 0],
+  },
+  {
+    name: "Soviet Soleri",
+    twitter: "@sovietsoleri",
+    image: "/img/sovietsoleri.webp",
+    position: [-10, 5, -1],
+  },
+  {
+    name: "T4C2",
+    twitter: "@teocomyn",
+    image: "/img/teocomyn.webp",
+    position: [6, 0.4, 0],
+    scale: 0.8,
   },
 ];
 
