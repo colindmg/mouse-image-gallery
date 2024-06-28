@@ -30,7 +30,14 @@ const Scene = () => {
       const speedFactor = 0.05;
       cameraRef.current.position.x += mousePosition.x * speedFactor;
       cameraRef.current.position.y += mousePosition.y * speedFactor;
+
       cameraRef.current.position.z = 10;
+      // const distanceFromCenter = Math.sqrt(
+      //   mousePosition.x ** 2 + mousePosition.y ** 2
+      // );
+      // const zDezoom = Math.min(distanceFromCenter, 0.5);
+
+      // cameraRef.current.position.z = 10 + zDezoom;
     }
   });
 

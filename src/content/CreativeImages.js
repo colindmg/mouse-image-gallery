@@ -27,7 +27,7 @@ const creativeImages = [
     name: "Jake Fried",
     twitter: "@jakejfried",
     image: "/img/jakejfried.webp",
-    position: [0, -5, -1],
+    position: [0, -5, 0],
   },
   {
     name: "Jesperish",
