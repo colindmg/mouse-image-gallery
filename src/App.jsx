@@ -9,6 +9,18 @@ function App() {
         <Canvas>
           <Scene />
         </Canvas>
+
+        {/* BLURRY SHAPES ON THE SIDES */}
+        <img
+          src="/shapes/leftblur.svg"
+          alt="Blur Shapes"
+          className="pointer-events-none fixed top-0 left-0 h-screen"
+        />
+        <img
+          src="/shapes/leftblur.svg"
+          alt="Blur Shapes"
+          className="pointer-events-none fixed top-0 right-0 h-screen rotate-180"
+        />
       </div>
     </>
   );
