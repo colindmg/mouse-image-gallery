@@ -38,11 +38,12 @@ const DynamicImage = ({ imageUrl, imagePosition, imageScale }) => {
       scale={imageScale}
     >
       <planeGeometry args={[dimensions.width, dimensions.height]} />
-      <shaderMaterial
+      {/* <shaderMaterial
         uniforms={{ uTexture: { value: texture } }}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
-      />
+      /> */}
+      <meshBasicMaterial color={"red"} />
     </mesh>
   );
 };

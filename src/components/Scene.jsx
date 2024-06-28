@@ -12,8 +12,9 @@ const Scene = () => {
 
   const handleMouseMove = (event) => {
     const { innerWidth, innerHeight } = window;
-    const x = (event.clientX / innerWidth) * 2 - 0.5; // Normalized to [-0.5, 0.5]
-    const y = -(event.clientY / innerHeight) * 2 + 0.5; // Normalized to [-0.5, 0.5]
+    const x = (event.clientX / innerWidth) * 2 - 1;
+    const y = -((event.clientY / innerHeight) * 2 - 1);
+    // console.log(x, y);
     setMousePosition(new Vector2(x, y));
   };
 
@@ -29,7 +30,7 @@ const Scene = () => {
       const speedFactor = 0.05;
       cameraRef.current.position.x += mousePosition.x * speedFactor;
       cameraRef.current.position.y += mousePosition.y * speedFactor;
-      cameraRef.current.position.z = 10; // Keep the camera at a fixed distance
+      cameraRef.current.position.z = 10;
     }
   });
 
