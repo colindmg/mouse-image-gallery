@@ -53,6 +53,7 @@ const Scene = () => {
         {creativeImages.map((image, index) => (
           <DynamicImage
             key={index}
+            imageObject={image}
             imageUrl={image.image}
             imagePosition={image.position}
             imageScale={image.scale ? image.scale : 1}

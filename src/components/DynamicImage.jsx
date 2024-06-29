@@ -4,6 +4,7 @@ import { motion } from "framer-motion-3d";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { TextureLoader } from "three";
+import DynamicImageInfos from "./DynamicImageInfos";
 
 const vertexShader = `
   varying vec2 vUv;
@@ -22,69 +23,75 @@ const fragmentShader = `
 `;
 
 const DynamicImage = ({
-  imageUrl,
-  imagePosition,
-  imageScale,
+  imageObject,
   isTransparent,
   imageIndex,
   selectedImageIndex,
   setSelectedImageIndex,
 }) => {
-  const texture = useLoader(TextureLoader, imageUrl);
+  const texture = useLoader(TextureLoader, imageObject.image);
   const [dimensions, setDimensions] = useState({ width: 3, height: 3 });
 
   useEffect(() => {
     const img = new Image();
-    img.src = imageUrl;
+    img.src = imageObject.image;
     img.onload = () => {
       setDimensions({ width: (img.width * 3) / img.height, height: 3 });
     };
-  }, [imageUrl]);
+  }, [imageObject.image]);
 
   return (
-    <motion.mesh
-      position={imagePosition ? imagePosition : [0, 0, 0]}
-      scale={imageScale}
-      onPointerDown={() => {
-        selectedImageIndex !== -1
-          ? setSelectedImageIndex(-1)
-          : setSelectedImageIndex(imageIndex);
-      }}
-      onPointerEnter={() => {
-        if (selectedImageIndex === -1 || selectedImageIndex === imageIndex) {
-          document.body.style.cursor = "pointer";
-        }
-      }}
-      onPointerOut={() => (document.body.style.cursor = "auto")}
-    >
-      <planeGeometry args={[dimensions.width, dimensions.height]} />
-      {/* <shaderMaterial
+    <>
+      <motion.mesh
+        position={imageObject.position ? imageObject.position : [0, 0, 0]}
+        scale={imageObject.scale ? imageObject.scale : 1}
+        onPointerDown={() => {
+          selectedImageIndex !== -1
+            ? setSelectedImageIndex(-1)
+            : setSelectedImageIndex(imageIndex);
+        }}
+        onPointerEnter={() => {
+          if (selectedImageIndex === -1 || selectedImageIndex === imageIndex) {
+            document.body.style.cursor = "pointer";
+          }
+        }}
+        onPointerOut={() => (document.body.style.cursor = "auto")}
+      >
+        <planeGeometry args={[dimensions.width, dimensions.height]} />
+        {/* <shaderMaterial
         uniforms={{ uTexture: { value: texture } }}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
       /> */}
-      {/* <meshBasicMaterial color={"red"} /> */}
-      <motion.meshBasicMaterial
-        map={texture}
-        transparent
-        opacity={isTransparent ? 0 : 1}
-        animate={{
-          opacity: isTransparent ? 0 : 1,
-          transition: {
-            duration: 0.5,
-            ease: "easeOut",
-            delay: 0.03 * imageIndex,
-          },
-        }}
+        {/* <meshBasicMaterial color={"red"} /> */}
+        <motion.meshBasicMaterial
+          map={texture}
+          transparent
+          opacity={isTransparent ? 0 : 1}
+          animate={{
+            opacity: isTransparent ? 0 : 1,
+            transition: {
+              duration: 0.5,
+              ease: "easeOut",
+              delay: 0.03 * imageIndex,
+            },
+          }}
+        />
+      </motion.mesh>
+
+      {/* INFORMATIONS SUR L'IMAGE */}
+      <DynamicImageInfos
+        twitter={imageObject.twitter}
+        position={imageObject.position}
+        imageScale={imageObject.scale ? imageObject.scale : 1}
+        isVisible={selectedImageIndex === imageIndex}
       />
-    </motion.mesh>
+    </>
   );
 };
 
 DynamicImage.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-  imagePosition: PropTypes.array,
-  imageScale: PropTypes.number,
+  imageObject: PropTypes.object,
   isTransparent: PropTypes.bool,
   imageIndex: PropTypes.number,
   selectedImageIndex: PropTypes.number,
