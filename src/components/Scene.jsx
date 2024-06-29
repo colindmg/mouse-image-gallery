@@ -60,6 +60,7 @@ const Scene = () => {
               selectedImageIndex !== -1 && selectedImageIndex !== index
             }
             imageIndex={index}
+            selectedImageIndex={selectedImageIndex}
             setSelectedImageIndex={setSelectedImageIndex}
           />
         ))}

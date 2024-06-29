@@ -27,6 +27,7 @@ const DynamicImage = ({
   imageScale,
   isTransparent,
   imageIndex,
+  selectedImageIndex,
   setSelectedImageIndex,
 }) => {
   const texture = useLoader(TextureLoader, imageUrl);
@@ -44,7 +45,13 @@ const DynamicImage = ({
     <motion.mesh
       position={imagePosition ? imagePosition : [0, 0, 0]}
       scale={imageScale}
-      onPointerDown={() => setSelectedImageIndex(imageIndex)}
+      onPointerDown={() => {
+        selectedImageIndex !== -1
+          ? setSelectedImageIndex(-1)
+          : setSelectedImageIndex(imageIndex);
+      }}
+      onPointerEnter={() => (document.body.style.cursor = "pointer")}
+      onPointerOut={() => (document.body.style.cursor = "auto")}
     >
       <planeGeometry args={[dimensions.width, dimensions.height]} />
       {/* <shaderMaterial
@@ -72,6 +79,7 @@ DynamicImage.propTypes = {
   imageScale: PropTypes.number,
   isTransparent: PropTypes.bool,
   imageIndex: PropTypes.number,
+  selectedImageIndex: PropTypes.number,
   setSelectedImageIndex: PropTypes.func,
 };
 
