@@ -14,14 +14,16 @@ function App() {
         <img
           src="/shapes/leftblur.svg"
           alt="Blur Shapes"
-          className="pointer-events-none fixed top-0 left-0 h-screen"
+          className="pointer-events-none fixed top-0 left-0 h-screen select-none"
         />
         <img
           src="/shapes/leftblur.svg"
           alt="Blur Shapes"
-          className="pointer-events-none fixed top-0 right-0 h-screen rotate-180"
+          className="pointer-events-none fixed top-0 right-0 h-screen rotate-180 select-none"
         />
       </div>
+
+      {/* <div className="h-screen w-screen bg-red-500"></div> */}
     </>
   );
 }

@@ -4,5 +4,11 @@
 
 /* STYLE DU BODY */
 body {
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* STYLE DE LA SCROLL BAR */
+::-webkit-scrollbar {
+  width: 0px;
 }

@@ -30,7 +30,7 @@ const Scene = () => {
   }, []);
 
   // GESTION DU MOUVEMENT DE LA CAMÉRA QUAND UNE IMAGE EST SÉLECTIONNÉE
-  const zoomZ = 8;
+  const zoomZ = 7;
 
   // USE FRAME D'ANIMATION DE LA CAMÉRA
   useFrame(() => {
