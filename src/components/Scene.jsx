@@ -29,19 +29,31 @@ const Scene = () => {
     };
   }, []);
 
+  // GESTION DU MOUVEMENT DE LA CAMÉRA QUAND UNE IMAGE EST SÉLECTIONNÉE
+  const zoomZ = 8;
+
+  // USE FRAME D'ANIMATION DE LA CAMÉRA
   useFrame(() => {
     if (cameraRef.current) {
-      const speedFactor = 0.05;
-      cameraRef.current.position.x += mousePosition.x * speedFactor;
-      cameraRef.current.position.y += mousePosition.y * speedFactor;
+      // Si aucune image n'est sélectionnée
+      if (selectedImageIndex === -1) {
+        const speedFactor = 0.05;
+        cameraRef.current.position.x += mousePosition.x * speedFactor;
+        cameraRef.current.position.y += mousePosition.y * speedFactor;
 
-      cameraRef.current.position.z = 10;
-      // const distanceFromCenter = Math.sqrt(
-      //   mousePosition.x ** 2 + mousePosition.y ** 2
-      // );
-      // const zDezoom = Math.min(distanceFromCenter, 0.5);
-
-      // cameraRef.current.position.z = 10 + zDezoom;
+        if (cameraRef.current.position.z < 10) {
+          cameraRef.current.position.z += 0.1;
+        }
+      } else {
+        const image = creativeImages[selectedImageIndex];
+        const speedFactor = 0.025;
+        cameraRef.current.position.x +=
+          (image.position[0] - cameraRef.current.position.x) * speedFactor;
+        cameraRef.current.position.y +=
+          (image.position[1] - cameraRef.current.position.y) * speedFactor;
+        cameraRef.current.position.z +=
+          (zoomZ - cameraRef.current.position.z) * speedFactor;
+      }
     }
   });
 
@@ -54,9 +66,6 @@ const Scene = () => {
           <DynamicImage
             key={index}
             imageObject={image}
-            imageUrl={image.image}
-            imagePosition={image.position}
-            imageScale={image.scale ? image.scale : 1}
             isTransparent={
               selectedImageIndex !== -1 && selectedImageIndex !== index
             }

@@ -6,21 +6,21 @@ import { useEffect, useState } from "react";
 import { TextureLoader } from "three";
 import DynamicImageInfos from "./DynamicImageInfos";
 
-const vertexShader = `
-  varying vec2 vUv;
-  void main() {
-    vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  }
-`;
+// const vertexShader = `
+//   varying vec2 vUv;
+//   void main() {
+//     vUv = uv;
+//     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+//   }
+// `;
 
-const fragmentShader = `
-  uniform sampler2D uTexture;
-  varying vec2 vUv;
-  void main() {
-    gl_FragColor = texture2D(uTexture, vUv);
-  }
-`;
+// const fragmentShader = `
+//   uniform sampler2D uTexture;
+//   varying vec2 vUv;
+//   void main() {
+//     gl_FragColor = texture2D(uTexture, vUv);
+//   }
+// `;
 
 const DynamicImage = ({
   imageObject,
