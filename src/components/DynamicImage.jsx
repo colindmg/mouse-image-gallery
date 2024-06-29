@@ -66,7 +66,11 @@ const DynamicImage = ({
         opacity={isTransparent ? 0 : 1}
         animate={{
           opacity: isTransparent ? 0 : 1,
-          transition: { duration: 0.5, ease: "easeOut" },
+          transition: {
+            duration: 0.5,
+            ease: "easeOut",
+            delay: 0.03 * imageIndex,
+          },
         }}
       />
     </motion.mesh>
