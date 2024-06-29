@@ -50,7 +50,11 @@ const DynamicImage = ({
           ? setSelectedImageIndex(-1)
           : setSelectedImageIndex(imageIndex);
       }}
-      onPointerEnter={() => (document.body.style.cursor = "pointer")}
+      onPointerEnter={() => {
+        if (selectedImageIndex === -1 || selectedImageIndex === imageIndex) {
+          document.body.style.cursor = "pointer";
+        }
+      }}
       onPointerOut={() => (document.body.style.cursor = "auto")}
     >
       <planeGeometry args={[dimensions.width, dimensions.height]} />
