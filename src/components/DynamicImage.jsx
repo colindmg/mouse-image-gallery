@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unknown-property */
 import { useLoader } from "@react-three/fiber";
+import { motion } from "framer-motion-3d";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { TextureLoader } from "three";
@@ -20,7 +21,14 @@ const fragmentShader = `
   }
 `;
 
-const DynamicImage = ({ imageUrl, imagePosition, imageScale }) => {
+const DynamicImage = ({
+  imageUrl,
+  imagePosition,
+  imageScale,
+  isTransparent,
+  imageIndex,
+  setSelectedImageIndex,
+}) => {
   const texture = useLoader(TextureLoader, imageUrl);
   const [dimensions, setDimensions] = useState({ width: 3, height: 3 });
 
@@ -33,18 +41,28 @@ const DynamicImage = ({ imageUrl, imagePosition, imageScale }) => {
   }, [imageUrl]);
 
   return (
-    <mesh
+    <motion.mesh
       position={imagePosition ? imagePosition : [0, 0, 0]}
       scale={imageScale}
+      onPointerDown={() => setSelectedImageIndex(imageIndex)}
     >
       <planeGeometry args={[dimensions.width, dimensions.height]} />
-      <shaderMaterial
+      {/* <shaderMaterial
         uniforms={{ uTexture: { value: texture } }}
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}
-      />
+      /> */}
       {/* <meshBasicMaterial color={"red"} /> */}
-    </mesh>
+      <motion.meshBasicMaterial
+        map={texture}
+        transparent
+        opacity={isTransparent ? 0 : 1}
+        animate={{
+          opacity: isTransparent ? 0 : 1,
+          transition: { duration: 0.5, ease: "easeOut" },
+        }}
+      />
+    </motion.mesh>
   );
 };
 
@@ -52,6 +70,9 @@ DynamicImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   imagePosition: PropTypes.array,
   imageScale: PropTypes.number,
+  isTransparent: PropTypes.bool,
+  imageIndex: PropTypes.number,
+  setSelectedImageIndex: PropTypes.func,
 };
 
 export default DynamicImage;

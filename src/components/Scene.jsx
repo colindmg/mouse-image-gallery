@@ -7,6 +7,10 @@ import creativeImages from "../content/CreativeImages";
 import DynamicImage from "./DynamicImage";
 
 const Scene = () => {
+  // IMAGE SÉLECTIONNÉE
+  const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
+
+  // GESTION DES MOUVEMENTS DE LA CAMÉRA EN FONCTION DE LA POSITION DE LA SOURIS
   const [mousePosition, setMousePosition] = useState(new Vector2(0, 0));
   const cameraRef = useRef();
 
@@ -52,6 +56,11 @@ const Scene = () => {
             imageUrl={image.image}
             imagePosition={image.position}
             imageScale={image.scale ? image.scale : 1}
+            isTransparent={
+              selectedImageIndex !== -1 && selectedImageIndex !== index
+            }
+            imageIndex={index}
+            setSelectedImageIndex={setSelectedImageIndex}
           />
         ))}
       </group>
