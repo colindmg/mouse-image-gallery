@@ -47,7 +47,7 @@ const DynamicImageInfos = ({ twitter, position, imageScale, isVisible }) => {
   return (
     <Text
       ref={textRef}
-      color="black"
+      color="#424242"
       fontSize={0.2}
       position={[
         position[0] + 0.5 * imageScale,

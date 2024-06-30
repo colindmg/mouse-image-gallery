@@ -33,6 +33,8 @@ const creativeImages = [
     twitter: "@jakejfried",
     image: "/img/jakejfried.webp",
     position: [0.5, -4, 0],
+    description:
+      "Jake Fried is an American artist known for his detailed, hand-drawn animations. Originally a painter, he uses materials like white-out, coffee, and ink to create fast-paced, evolving narratives in his films. His unique style explores themes of time and transformation, making him a notable figure in contemporary art.",
   },
   {
     number: 6,
