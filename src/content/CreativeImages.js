@@ -70,7 +70,7 @@ const creativeImages = [
     image: "/img/salu_cv.webp",
     position: [-6, -5, -1],
     description:
-      "salucv is a graphist and art director based in Angers, France. He is making various type of creations, wich makes him a versatile artist.",
+      "salucv is a graphic designer and art director based in Angers, France. He is making various type of creations, wich makes him a versatile artist.",
   },
   {
     number: 8,

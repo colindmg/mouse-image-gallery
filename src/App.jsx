@@ -2,6 +2,7 @@
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import ArtistCreationsGrid from "./components/ArtistCreationsGrid";
 import ArtistDetails from "./components/ArtistDetails";
 import Scene from "./components/Scene";
 import creativeImages from "./content/CreativeImages";
@@ -32,7 +33,7 @@ function App() {
 
   return (
     <>
-      <div className="h-screen w-screen relative bg-gray-100">
+      <div className="h-screen w-screen relative bg-gray-100 max-[520px]:hidden">
         <Canvas>
           <Scene onImageSelect={handleImageSelect} />
         </Canvas>
@@ -67,25 +68,18 @@ function App() {
       {/* GALLERY D'IMAGES SI IL Y'EN A POUR L'ARTISTE SELECTIONNÉ */}
       {selectedImageIndex !== -1 &&
         creativeImages[selectedImageIndex].gallery && (
-          <div
-            id="artist-gallery"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-screen"
-          >
-            {creativeImages[selectedImageIndex].gallery.map((image, index) => (
-              <div key={image} className="h-[350px] overflow-hidden">
-                <img
-                  src={image}
-                  alt={
-                    creativeImages[selectedImageIndex].name +
-                    " - Image n°" +
-                    (index + 1)
-                  }
-                  className="object-cover w-full h-full object-center scale-110 hover:scale-100 transition-transform cursor-pointer duration-300 ease-in-out"
-                />
-              </div>
-            ))}
-          </div>
+          <ArtistCreationsGrid
+            artistName={creativeImages[selectedImageIndex].name}
+            gallery={creativeImages[selectedImageIndex].gallery}
+          />
         )}
+
+      {/* MESSAGE POUR LES MOBILE */}
+      <div className="fixed top-0 left-0 h-screen w-screen items-center justify-center hidden p-9 max-[520px]:flex bg-gray-100">
+        <p className="text-sm uppercase text-neutral-900 text-center">
+          Sorry, this demo is not available on mobile. Please use a desktop
+        </p>
+      </div>
     </>
   );
 }
