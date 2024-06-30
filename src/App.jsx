@@ -15,8 +15,6 @@ function App() {
   useEffect(() => {
     if (selectedImageIndex !== -1) {
       setSelectedImageObject(creativeImages[selectedImageIndex]);
-    } else if (selectedImageIndex === -1) {
-      window.scrollTo(0, 0);
     }
   }, [selectedImageIndex]);
 

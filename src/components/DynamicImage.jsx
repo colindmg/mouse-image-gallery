@@ -46,9 +46,14 @@ const DynamicImage = ({
         position={imageObject.position ? imageObject.position : [0, 0, 0]}
         scale={imageObject.scale ? imageObject.scale : 1}
         onPointerDown={() => {
-          selectedImageIndex !== -1
-            ? setSelectedImageIndex(-1)
-            : setSelectedImageIndex(imageIndex);
+          if (selectedImageIndex !== -1 && window.scrollY === 0) {
+            setSelectedImageIndex(-1);
+          } else {
+            setSelectedImageIndex(imageIndex);
+          }
+          // selectedImageIndex !== -1
+          //   ? setSelectedImageIndex(-1)
+          //   : setSelectedImageIndex(imageIndex);
         }}
         onPointerEnter={() => {
           if (selectedImageIndex === -1 || selectedImageIndex === imageIndex) {
