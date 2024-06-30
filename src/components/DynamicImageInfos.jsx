@@ -6,8 +6,9 @@ import { useEffect, useRef, useState } from "react";
 const DynamicImageInfos = ({ twitter, position, imageScale, isVisible }) => {
   const textRef = useRef(null);
   const [opacity, setOpacity] = useState(isVisible ? 1 : 0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  // Mettre à jour l'opacité progressivement lorsque isVisible change
+  // ANIMATION D'APPARITION/DISPARITION DU TEXTE
   useEffect(() => {
     if (isVisible) {
       let opacityValue = 0;
@@ -47,7 +48,7 @@ const DynamicImageInfos = ({ twitter, position, imageScale, isVisible }) => {
   return (
     <Text
       ref={textRef}
-      color="#424242"
+      color={isHovered ? "#191919" : "#424242"}
       fontSize={0.2}
       position={[
         position[0] + 0.5 * imageScale,
@@ -58,8 +59,14 @@ const DynamicImageInfos = ({ twitter, position, imageScale, isVisible }) => {
       onPointerDown={() => {
         window.open(`https://x.com/${twitter}`, "_blank");
       }}
-      onPointerEnter={() => (document.body.style.cursor = "pointer")}
-      onPointerLeave={() => (document.body.style.cursor = "auto")}
+      onPointerEnter={() => {
+        document.body.style.cursor = "pointer";
+        setIsHovered(true);
+      }}
+      onPointerLeave={() => {
+        document.body.style.cursor = "auto";
+        setIsHovered(false);
+      }}
     >
       @{twitter}
     </Text>

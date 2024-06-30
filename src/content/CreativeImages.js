@@ -13,7 +13,7 @@ const creativeImages = [
     image: "/img/7Fringz.webp",
     position: [-3.5, 0, -1],
     description:
-      "Fringz is a french artist who makes paintings and digital art. Based in Paris, he is known for his unique style. He is exposded from 01 to 07 July 24 in the Aristik Factory located Boulevard Haussmann in Paris.",
+      "Fringz is a french artist who makes paintings and digital art. Based in Paris, he is known for his unique style. He is exposed from 01 to 07 July 24 in the Aristik Factory located Boulevard Haussmann in Paris.",
   },
   {
     number: 3,
@@ -56,7 +56,7 @@ const creativeImages = [
   {
     number: 8,
     name: "SenssyLee",
-    twitter: "@senssylee",
+    twitter: "senssylee",
     image: "/img/senssylee.webp",
     position: [0.5, 5, 0],
   },
