@@ -46,7 +46,7 @@ const ArtistDetails = ({ artistDetails, imageIndex }) => {
     artistDetails && (
       <>
         {/* NAME & NUMBER OF THE ARTIST */}
-        <div className="absolute top-32 left-48 flex flex-col gap-1 text-neutral-900">
+        <div className="absolute top-32 left-48 flex flex-col gap-1 text-neutral-900 pointer-events-none">
           <motion.p
             className="text-3xl font-bold tracking-wide"
             initial="hidden"
@@ -67,7 +67,7 @@ const ArtistDetails = ({ artistDetails, imageIndex }) => {
 
         {/* ARTIST DESCRIPTION */}
         {artistDetails.description && (
-          <div className="absolute bottom-32 right-48  text-neutral-900 ">
+          <div className="absolute bottom-32 right-48  text-neutral-900 pointer-events-none">
             <p className="text-sm text-right text-balance w-56">
               {artistDetails.description.split(" ").map((word, index) => (
                 <motion.span
