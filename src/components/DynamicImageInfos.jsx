@@ -57,7 +57,7 @@ const DynamicImageInfos = ({ twitter, position, imageScale, isVisible }) => {
       ]}
       fillOpacity={opacity}
       onPointerDown={() => {
-        window.open(`https://x.com/${twitter}`, "_blank");
+        isVisible ? window.open(`https://x.com/${twitter}`, "_blank") : null;
       }}
       onPointerEnter={() => {
         document.body.style.cursor = "pointer";
