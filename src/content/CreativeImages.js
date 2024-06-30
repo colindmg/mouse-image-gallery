@@ -1,10 +1,12 @@
 const creativeImages = [
   {
     number: 1,
-    name: "Arta Jens",
+    name: "Artajens",
     twitter: "artajens",
     image: "/img/artajens.webp",
     position: [1, 1, -2],
+    description:
+      "Artajens is a graphic designer based in Lyon, France. She has her own style wich makes her creations unique.",
   },
   {
     number: 2,
@@ -31,6 +33,7 @@ const creativeImages = [
     twitter: "iskream5",
     image: "/img/iskream5.webp",
     position: [6, -3.5, -1],
+    description: "Iskream is a visual artist based in France.",
   },
   {
     number: 4,
@@ -57,20 +60,26 @@ const creativeImages = [
     image: "/img/Jesperish.webp",
     position: [7, 5, -2],
     scale: 1.3,
+    description:
+      "Jesperish is a digital artist well know for his unique detailed and futuristic style.",
   },
   {
     number: 7,
-    name: "Salu CV",
+    name: "salucv",
     twitter: "salu_cv",
     image: "/img/salu_cv.webp",
     position: [-6, -5, -1],
+    description:
+      "salucv is a graphist and art director based in Angers, France. He is making various type of creations, wich makes him a versatile artist.",
   },
   {
     number: 8,
-    name: "SenssyLee",
+    name: "Senssy Lee",
     twitter: "senssylee",
     image: "/img/senssylee.webp",
     position: [0.5, 5, 0],
+    description:
+      "Senssy Lee is a french artist who makes paintings and digital art. He also makes merchandising from his creations.",
   },
   {
     number: 9,
@@ -79,28 +88,26 @@ const creativeImages = [
     image: "/img/blankembrace.webp",
     position: [-9, 0, -2],
     scale: 1.3,
+    description:
+      "Blank Embrace is an artist making visuals and AI art. He tries to encapsulate feelings in his creations.",
   },
   {
     number: 10,
-    name: "NearBound",
+    name: "Nearbound",
     twitter: "nearbound",
     image: "/img/nearbound.webp",
-    position: [10.5, -2, 0],
+    position: [-10, 5, -1],
+    description: "Nearbound is an artist who makes handmade stuffs and more.",
   },
   {
     number: 11,
-    name: "Soviet Soleri",
-    twitter: "sovietsoleri",
-    image: "/img/sovietsoleri.webp",
-    position: [-10, 5, -1],
-  },
-  {
-    number: 12,
     name: "T4C2",
     twitter: "teocomyn",
     image: "/img/teocomyn.webp",
     position: [6, 0.4, 0],
     scale: 0.8,
+    description:
+      "T4C2 is a french graphic designer. He makes unique visuals and is also the founder of the media 'HYTRAPE'.",
   },
 ];
 
