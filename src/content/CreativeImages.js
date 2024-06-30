@@ -14,6 +14,16 @@ const creativeImages = [
     position: [-3.5, 0, -1],
     description:
       "Fringz is a french artist who makes paintings and digital art. Based in Paris, he is known for his unique style. He is exposed from 01 to 07 July 24 in the Aristik Factory located Boulevard Haussmann in Paris.",
+    gallery: [
+      "/img/7Fringz/1.webp",
+      "/img/7Fringz/2.webp",
+      "/img/7Fringz/3.webp",
+      "/img/7Fringz/4.webp",
+      "/img/7Fringz/5.webp",
+      "/img/7Fringz/6.webp",
+      "/img/7Fringz/7.webp",
+      "/img/7Fringz/8.webp",
+    ],
   },
   {
     number: 3,
@@ -24,10 +34,12 @@ const creativeImages = [
   },
   {
     number: 4,
-    name: "BaastArt",
+    name: "Baastart",
     twitter: "baastart_",
     image: "/img/baastart_.webp",
     position: [-6, 5, -2],
+    description:
+      "From France, Baastart is a 21 years old graphic designer. He aims to convey emotions and tell stories through his creations.",
   },
   {
     number: 5,
