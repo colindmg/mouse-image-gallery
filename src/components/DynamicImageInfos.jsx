@@ -55,8 +55,13 @@ const DynamicImageInfos = ({ twitter, position, imageScale, isVisible }) => {
         position[2],
       ]}
       fillOpacity={opacity}
+      onPointerDown={() => {
+        window.open(`https://x.com/${twitter}`, "_blank");
+      }}
+      onPointerEnter={() => (document.body.style.cursor = "pointer")}
+      onPointerLeave={() => (document.body.style.cursor = "auto")}
     >
-      {twitter}
+      @{twitter}
     </Text>
   );
 };
