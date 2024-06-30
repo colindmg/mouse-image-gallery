@@ -6,7 +6,7 @@ const creativeImages = [
     position: [1, 1, -2],
   },
   {
-    name: "7FRINGZ",
+    name: "Fringz",
     twitter: "@7Fringz",
     image: "/img/7Fringz.webp",
     position: [-3.5, 0, -1],

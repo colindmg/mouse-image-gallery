@@ -1,14 +1,19 @@
 /* eslint-disable react/no-unknown-property */
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
+import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import { Vector2 } from "three";
 import creativeImages from "../content/CreativeImages";
 import DynamicImage from "./DynamicImage";
 
-const Scene = () => {
+const Scene = ({ onImageSelect }) => {
   // IMAGE SÉLECTIONNÉE
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
+
+  useEffect(() => {
+    onImageSelect(selectedImageIndex);
+  }, [selectedImageIndex, onImageSelect]);
 
   // GESTION DES MOUVEMENTS DE LA CAMÉRA EN FONCTION DE LA POSITION DE LA SOURIS
   const [mousePosition, setMousePosition] = useState(new Vector2(0, 0));
@@ -77,6 +82,10 @@ const Scene = () => {
       </group>
     </>
   );
+};
+
+Scene.propTypes = {
+  onImageSelect: PropTypes.func,
 };
 
 export default Scene;
