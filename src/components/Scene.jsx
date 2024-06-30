@@ -7,14 +7,7 @@ import { Vector2 } from "three";
 import creativeImages from "../content/CreativeImages";
 import DynamicImage from "./DynamicImage";
 
-const Scene = ({ onImageSelect }) => {
-  // IMAGE SÉLECTIONNÉE
-  const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
-
-  useEffect(() => {
-    onImageSelect(selectedImageIndex);
-  }, [selectedImageIndex, onImageSelect]);
-
+const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
   // GESTION DES MOUVEMENTS DE LA CAMÉRA EN FONCTION DE LA POSITION DE LA SOURIS
   const [mousePosition, setMousePosition] = useState(new Vector2(0, 0));
   const cameraRef = useRef();
@@ -85,7 +78,8 @@ const Scene = ({ onImageSelect }) => {
 };
 
 Scene.propTypes = {
-  onImageSelect: PropTypes.func,
+  selectedImageIndex: PropTypes.number,
+  setSelectedImageIndex: PropTypes.func,
 };
 
 export default Scene;

@@ -12,12 +12,11 @@ function App() {
   const [selectedImageIndex, setSelectedImageIndex] = useState(-1);
   const [selectedImageObject, setSelectedImageObject] = useState(null);
 
-  const handleImageSelect = (index) => {
-    setSelectedImageIndex(index);
-    if (index !== -1) {
-      setSelectedImageObject(creativeImages[index]);
+  useEffect(() => {
+    if (selectedImageIndex !== -1) {
+      setSelectedImageObject(creativeImages[selectedImageIndex]);
     }
-  };
+  }, [selectedImageIndex]);
 
   // ACTIVE LE SCROLL LORSQUE UNE IMAGE AVEC UNE GALLERY EST SÉLECTIONNÉE
   useEffect(() => {
@@ -35,7 +34,10 @@ function App() {
     <>
       <div className="h-screen w-screen relative bg-gray-100 max-[520px]:hidden">
         <Canvas>
-          <Scene onImageSelect={handleImageSelect} />
+          <Scene
+            selectedImageIndex={selectedImageIndex}
+            setSelectedImageIndex={setSelectedImageIndex}
+          />
         </Canvas>
 
         {/* BLURRY SHAPES ON THE SIDES */}
@@ -62,6 +64,7 @@ function App() {
         <ArtistDetails
           artistDetails={selectedImageObject}
           imageIndex={selectedImageIndex}
+          setSelectedImageIndex={setSelectedImageIndex}
         />
       </div>
 

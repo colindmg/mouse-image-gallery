@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-const ArtistDetails = ({ artistDetails, imageIndex }) => {
+const ArtistDetails = ({
+  artistDetails,
+  imageIndex,
+  setSelectedImageIndex,
+}) => {
   const pVariants = {
     visible: {
       opacity: 1,
@@ -86,6 +90,25 @@ const ArtistDetails = ({ artistDetails, imageIndex }) => {
           </div>
         )}
 
+        {/* CROSS TO CLOSE THE DETAILS AND GO BACK*/}
+        <button
+          onClick={() => {
+            setSelectedImageIndex(-1);
+          }}
+        >
+          <motion.img
+            src="/icons/close.svg"
+            alt="Cross"
+            className="absolute top-32 right-[13%] w-10 cursor-pointer"
+            initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
+            animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
+            transition={{
+              duration: imageIndex === -1 ? 0.5 : 0.8,
+              delay: imageIndex === -1 ? 0 : 1,
+            }}
+          />
+        </button>
+
         {/* CHEVRON DOWN IF THE ARTIST IS PROVIDED A GALLERY */}
         {artistDetails.gallery && (
           <a href="#artist-gallery">
@@ -110,6 +133,7 @@ const ArtistDetails = ({ artistDetails, imageIndex }) => {
 ArtistDetails.propTypes = {
   artistDetails: PropTypes.object,
   imageIndex: PropTypes.number,
+  setSelectedImageIndex: PropTypes.func,
 };
 
 export default ArtistDetails;
