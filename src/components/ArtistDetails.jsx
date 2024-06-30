@@ -85,6 +85,23 @@ const ArtistDetails = ({ artistDetails, imageIndex }) => {
             </p>
           </div>
         )}
+
+        {/* CHEVRON DOWN IF THE ARTIST IS PROVIDED A GALLERY */}
+        {artistDetails.gallery && (
+          <a href="#artist-gallery">
+            <motion.img
+              src="/icons/chevron-down.svg"
+              alt="Chevron Down"
+              className="absolute bottom-32 left-48 w-10 bounce-animation"
+              initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
+              animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
+              transition={{
+                duration: imageIndex === -1 ? 0.5 : 0.8,
+                delay: imageIndex === -1 ? 0 : 1,
+              }}
+            />
+          </a>
+        )}
       </>
     )
   );

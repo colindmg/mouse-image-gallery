@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* STYLE DU BODY */
 body {
   overflow-x: hidden;
@@ -11,4 +15,21 @@ body {
 /* STYLE DE LA SCROLL BAR */
 ::-webkit-scrollbar {
   width: 0px;
+}
+
+/* ANIMATION SUR L'AXE Y INFINIE */
+@keyframes moveInfinite {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.bounce-animation {
+  animation: moveInfinite 2s infinite ease-in-out;
 }
