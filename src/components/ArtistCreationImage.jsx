@@ -18,14 +18,16 @@ const ArtistCreationImage = ({ sourceUrl, blurHash, altText }) => {
         className="absolute w-full h-full top-0 left-0"
         style={{ display: isLoaded ? "none" : "block" }}
       >
-        <Blurhash
-          hash={blurHash}
-          width="100%"
-          height="100%"
-          resolutionX={32}
-          resolutionY={32}
-          punch={1}
-        />
+        {blurHash !== "" && (
+          <Blurhash
+            hash={blurHash}
+            width="100%"
+            height="100%"
+            resolutionX={32}
+            resolutionY={32}
+            punch={1}
+          />
+        )}
       </div>
 
       {/* IMAGE CHARGÉE */}

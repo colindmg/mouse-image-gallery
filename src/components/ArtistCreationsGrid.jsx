@@ -18,7 +18,7 @@ const ArtistCreationsGrid = ({ artistName, gallery }) => {
         <ArtistCreationImage
           key={image}
           sourceUrl={image.imgSrc ? image.imgSrc : image}
-          blurHash={image.blurHash}
+          blurHash={image.blurHash ? image.blurHash : ""}
           altText={artistName + " - Image n°" + (index + 1)}
         />
       ))}
