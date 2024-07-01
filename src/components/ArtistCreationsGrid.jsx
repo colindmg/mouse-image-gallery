@@ -5,7 +5,7 @@ const ArtistCreationsGrid = ({ artistName, gallery }) => {
   return (
     <div
       id="artist-gallery"
-      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-screen max-[520px]:hidden"
+      className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-screen max-[520px]:hidden"
     >
       {gallery.map((image, index) => (
         // <div key={image} className="h-[350px] overflow-hidden">

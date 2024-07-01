@@ -12,7 +12,7 @@ const ArtistCreationImage = ({ sourceUrl, blurHash, altText }) => {
   }, [sourceUrl]);
 
   return (
-    <div className="relative h-[350px] overflow-hidden">
+    <div className="relative h-[250px] sm:h-[350px] overflow-hidden">
       {/* IMAGE BLURRED EN ATTENDANT LE CHARGEMENT */}
       <div
         className="absolute z-50 w-full h-full top-0 left-0 pointer-events-none transition-opacity duration-300 ease-in-out"
