@@ -51,9 +51,6 @@ const DynamicImage = ({
           } else {
             setSelectedImageIndex(imageIndex);
           }
-          // selectedImageIndex !== -1
-          //   ? setSelectedImageIndex(-1)
-          //   : setSelectedImageIndex(imageIndex);
         }}
         onPointerEnter={() => {
           if (selectedImageIndex === -1 || selectedImageIndex === imageIndex) {

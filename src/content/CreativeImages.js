@@ -23,14 +23,39 @@ const creativeImages = [
     description:
       "Fringz is a french artist who makes paintings and digital art. Based in Paris, he is known for his unique style. He is exposed from 01 to 07 July 24 in the Aristik Factory located Boulevard Haussmann in Paris.",
     gallery: [
-      "/img/7Fringz/1.webp",
-      "/img/7Fringz/2.webp",
-      "/img/7Fringz/3.webp",
-      "/img/7Fringz/4.webp",
-      "/img/7Fringz/5.webp",
-      "/img/7Fringz/6.webp",
-      "/img/7Fringz/7.webp",
-      "/img/7Fringz/8.webp",
+      {
+        imgSrc: "/img/7Fringz/1.webp",
+        blurHash: "LjI$BDx^?wR4%it7R:s-VpaeV?R.",
+      },
+      {
+        imgSrc: "/img/7Fringz/2.webp",
+        blurHash: "LC3Aa@M[W8xzwCRhXEtAV.ohfkW7",
+      },
+      {
+        imgSrc: "/img/7Fringz/3.webp",
+        blurHash: "LXOA0u,@_QJ,zX#Sx@oyRlOqXlI;",
+      },
+      {
+        imgSrc: "/img/7Fringz/4.webp",
+        blurHash: "L6GlG-Rj0G9TWI-z9RD.0IN5-?_8",
+      },
+      {
+        imgSrc: "/img/7Fringz/5.webp",
+        blurHash:
+          "qAO.h.0TaMRmRmE7?At4x:WWIsjtItIsRmxX-RbGWXR,t4NJE7t4^eoKN1ItWDNJRmj@~4IZxXRmoKod$}t4R,azNJIsxqt4xqt4",
+      },
+      {
+        imgSrc: "/img/7Fringz/6.webp",
+        blurHash: "LFI3^dMv00%jOukXImnN00S5s+Im",
+      },
+      {
+        imgSrc: "/img/7Fringz/7.webp",
+        blurHash: "L?Rw-$j@pIoe*JayVsa}pwoLozWV",
+      },
+      {
+        imgSrc: "/img/7Fringz/8.webp",
+        blurHash: "LEEdPItRqaof{09[xaniIAxbu4sA",
+      },
     ],
   },
   {
