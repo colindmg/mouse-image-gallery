@@ -15,8 +15,8 @@ const ArtistCreationImage = ({ sourceUrl, blurHash, altText }) => {
     <div className="relative h-[350px] overflow-hidden">
       {/* IMAGE BLURRED EN ATTENDANT LE CHARGEMENT */}
       <div
-        className="absolute w-full h-full top-0 left-0"
-        style={{ display: isLoaded ? "none" : "block" }}
+        className="absolute z-50 w-full h-full top-0 left-0 pointer-events-none transition-opacity duration-300 ease-in-out"
+        style={{ opacity: isLoaded ? 0 : 1 }}
       >
         {blurHash !== "" && (
           <Blurhash
