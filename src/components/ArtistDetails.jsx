@@ -52,7 +52,7 @@ const ArtistDetails = ({
     artistDetails && (
       <>
         {/* NAME & NUMBER OF THE ARTIST */}
-        <div className="absolute top-32 left-[13%] flex flex-col gap-1 text-neutral-900 pointer-events-none">
+        <div className="absolute top-[13%] left-[13%] flex flex-col gap-1 text-neutral-900 pointer-events-none">
           <motion.p
             className="text-3xl font-bold tracking-wide"
             initial="hidden"
@@ -73,7 +73,7 @@ const ArtistDetails = ({
 
         {/* ARTIST DESCRIPTION */}
         {artistDetails.description && (
-          <div className="absolute bottom-32 right-[13%] text-neutral-900 pointer-events-none">
+          <div className="absolute bottom-[13%] right-[13%] text-neutral-900 pointer-events-none">
             <p className="text-sm text-right text-balance w-56 max-lg:hidden">
               {artistDetails.description.split(" ").map((word, index) => (
                 <motion.span
@@ -101,7 +101,7 @@ const ArtistDetails = ({
           <motion.img
             src="/icons/close.svg"
             alt="Cross"
-            className="absolute top-32 right-[13%] w-10 cursor-pointer"
+            className="absolute top-[13%] right-[13%] w-10 cursor-pointer"
             initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
             animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
             transition={{
@@ -117,7 +117,7 @@ const ArtistDetails = ({
             <motion.img
               src="/icons/chevron-down.svg"
               alt="Chevron Down"
-              className="absolute bottom-32 left-[13%] w-10 bounce-animation"
+              className="absolute bottom-[13%] left-[13%] w-10 bounce-animation"
               initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
               animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
               transition={{
