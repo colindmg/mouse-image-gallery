@@ -20,7 +20,7 @@ const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
     if (cameraRef.current) {
       // Si aucune image n'est sélectionnée
       if (selectedImageIndex === -1) {
-        const speedFactor = 0.05;
+        const speedFactor = 0.06;
         cameraRef.current.position.x += mouse.x.get() * speedFactor;
         cameraRef.current.position.y += mouse.y.get() * speedFactor;
 
