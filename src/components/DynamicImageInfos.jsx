@@ -1,3 +1,5 @@
+// TWITTER @ OF THE ARTIST SELECTED
+
 import { Text } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import PropTypes from "prop-types";

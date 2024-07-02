@@ -1,3 +1,5 @@
+// 3D SCENE OF THE PROJECT (IMAGES WITH MOUSE INTERACTION & ZOOM ON CLICK)
+
 /* eslint-disable react/no-unknown-property */
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";

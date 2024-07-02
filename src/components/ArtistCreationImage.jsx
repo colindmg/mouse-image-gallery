@@ -1,3 +1,5 @@
+// IMAGE USED IN THE GRID OF THE ARTIST DETAILS VIEW
+
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";

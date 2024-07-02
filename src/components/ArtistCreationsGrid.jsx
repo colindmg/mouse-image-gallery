@@ -1,3 +1,5 @@
+// IMAGE GRID USED IN THE ARTIST DETAILS VIEW
+
 import PropTypes from "prop-types";
 import ArtistCreationImage from "./ArtistCreationImage";
 

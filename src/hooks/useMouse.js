@@ -1,3 +1,6 @@
+// CUSTOM HOOK TO TRACK MOUSE POSITION AND CONVERT IT TO A VALUE BETWEEN -1 AND 1 FOR BOTH X AND Y AXES
+// USED IN THE 3D SCENE TO MOVE THE CAMERA BASED ON MOUSE POSITION
+
 import { useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 

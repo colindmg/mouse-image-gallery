@@ -1,3 +1,5 @@
+// 3D IMAGE SHOWN ON THE MAIN VIEW (CLIQUABLE AND CURVED EFFECT ON SELECT)
+
 /* eslint-disable react/no-unknown-property */
 import { useFrame, useLoader } from "@react-three/fiber";
 import { animate, useMotionValue, useSpring } from "framer-motion";
@@ -136,6 +138,8 @@ const DynamicImage = ({
           fragmentShader={fragmentShader}
           transparent
         />
+
+        {/* MATERIAL SANS SHADER */}
         {/* <motion.meshBasicMaterial
           map={texture}
           transparent
