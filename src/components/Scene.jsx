@@ -2,30 +2,15 @@
 import { PerspectiveCamera } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import PropTypes from "prop-types";
-import { useEffect, useRef, useState } from "react";
-import { Vector2 } from "three";
+import { useRef } from "react";
 import creativeImages from "../content/CreativeImages";
+import useMouse from "../hooks/useMouse";
 import DynamicImage from "./DynamicImage";
 
 const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
   // GESTION DES MOUVEMENTS DE LA CAMÉRA EN FONCTION DE LA POSITION DE LA SOURIS
-  const [mousePosition, setMousePosition] = useState(new Vector2(0, 0));
   const cameraRef = useRef();
-
-  const handleMouseMove = (event) => {
-    const { innerWidth, innerHeight } = window;
-    const x = (event.clientX / innerWidth) * 2 - 1;
-    const y = -((event.clientY / innerHeight) * 2 - 1);
-    // console.log(x, y);
-    setMousePosition(new Vector2(x, y));
-  };
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  const mouse = useMouse();
 
   // GESTION DU MOUVEMENT DE LA CAMÉRA QUAND UNE IMAGE EST SÉLECTIONNÉE
   const zoomZ = 7;
@@ -36,8 +21,8 @@ const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
       // Si aucune image n'est sélectionnée
       if (selectedImageIndex === -1) {
         const speedFactor = 0.05;
-        cameraRef.current.position.x += mousePosition.x * speedFactor;
-        cameraRef.current.position.y += mousePosition.y * speedFactor;
+        cameraRef.current.position.x += mouse.x.get() * speedFactor;
+        cameraRef.current.position.y += mouse.y.get() * speedFactor;
 
         if (cameraRef.current.position.z < 10) {
           cameraRef.current.position.z += 0.1;
