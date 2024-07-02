@@ -42,7 +42,16 @@ function App() {
             />
           </Suspense>
         </Canvas>
-        <Loader />
+        <Loader
+          containerStyles={{
+            backgroundColor: "#f3f4f6",
+          }}
+          barStyles={{
+            background: "#191919",
+            height: "2px",
+            width: "100%",
+          }}
+        />
 
         {/* BLURRY SHAPES ON THE SIDES */}
         <motion.img
