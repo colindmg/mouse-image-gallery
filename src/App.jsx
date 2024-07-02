@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unknown-property */
+import { Loader } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import ArtistCreationsGrid from "./components/ArtistCreationsGrid";
 import ArtistDetails from "./components/ArtistDetails";
 import Scene from "./components/Scene";
@@ -34,11 +35,14 @@ function App() {
     <>
       <div className="h-screen w-screen relative bg-gray-100 max-[520px]:hidden">
         <Canvas>
-          <Scene
-            selectedImageIndex={selectedImageIndex}
-            setSelectedImageIndex={setSelectedImageIndex}
-          />
+          <Suspense fallback={null}>
+            <Scene
+              selectedImageIndex={selectedImageIndex}
+              setSelectedImageIndex={setSelectedImageIndex}
+            />
+          </Suspense>
         </Canvas>
+        <Loader />
 
         {/* BLURRY SHAPES ON THE SIDES */}
         <motion.img

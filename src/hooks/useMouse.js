@@ -15,7 +15,7 @@ export default function useMouse() {
     const { innerWidth, innerHeight } = window;
     mouse.x.set((clientX / innerWidth) * 2 - 1);
     mouse.y.set(-((clientY / innerHeight) * 2 - 1));
-    console.log(mouse.x.get(), mouse.y.get());
+    // console.log(mouse.x.get(), mouse.y.get());
   };
 
   useEffect(() => {
