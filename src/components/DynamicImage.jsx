@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { useLoader } from "@react-three/fiber";
+import { useFrame, useLoader } from "@react-three/fiber";
 import { animate, useMotionValue } from "framer-motion";
 import { motion } from "framer-motion-3d";
 import PropTypes from "prop-types";
@@ -9,9 +9,15 @@ import DynamicImageInfos from "./DynamicImageInfos";
 
 const vertexShader = `
   varying vec2 vUv;
+  uniform vec2 uDelta;
+  float PI = 3.141592653589793238;
+
   void main() {
     vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    vec3 newPosition = position;
+    newPosition.x += sin(uv.y * PI) * uDelta.x * 0.1;
+    newPosition.y += sin(uv.x * PI) * uDelta.y * 0.1;
+    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
 `;
 
@@ -32,6 +38,7 @@ const DynamicImage = ({
   imageIndex,
   selectedImageIndex,
   setSelectedImageIndex,
+  camera,
 }) => {
   // CHARGEMENT DE L'IMAGE ET DE SES DIMENSIONS
   const texture = useLoader(TextureLoader, imageObject.image);
@@ -49,6 +56,7 @@ const DynamicImage = ({
   const mesh = useRef();
   const uniforms = useRef({
     uTexture: { value: texture },
+    uDelta: { value: { x: 0, y: 0 } },
     uOpacity: { value: 1 },
   });
   const opacity = useMotionValue(1);
@@ -74,6 +82,20 @@ const DynamicImage = ({
     }
   }, [isTransparent, imageIndex, opacity]);
 
+  // ANIMATION DE COURBURE DE L'IMAGE
+  useFrame(() => {
+    const cameraX = camera
+      ? camera.current.position.x
+      : imageObject.position[0];
+    const cameraY = camera
+      ? camera.current.position.y
+      : imageObject.position[1];
+    mesh.current.material.uniforms.uDelta.value = {
+      x: -1 * (imageObject.position[0] - cameraX),
+      y: -1 * (imageObject.position[1] - cameraY),
+    };
+  });
+
   return (
     <>
       <motion.mesh
@@ -94,7 +116,7 @@ const DynamicImage = ({
         }}
         onPointerOut={() => (document.body.style.cursor = "auto")}
       >
-        <planeGeometry args={[dimensions.width, dimensions.height, 15, 15]} />
+        <planeGeometry args={[dimensions.width, dimensions.height, 10, 10]} />
         <motion.shaderMaterial
           uniforms={uniforms.current}
           vertexShader={vertexShader}
@@ -133,6 +155,7 @@ DynamicImage.propTypes = {
   imageIndex: PropTypes.number,
   selectedImageIndex: PropTypes.number,
   setSelectedImageIndex: PropTypes.func,
+  camera: PropTypes.object || null,
 };
 
 export default DynamicImage;

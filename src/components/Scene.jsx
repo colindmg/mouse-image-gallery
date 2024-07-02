@@ -47,6 +47,7 @@ const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
       <group>
         {creativeImages.map((image, index) => (
           <DynamicImage
+            camera={index === selectedImageIndex ? cameraRef : null}
             key={index}
             imageObject={image}
             isTransparent={
