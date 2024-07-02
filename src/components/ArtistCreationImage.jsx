@@ -7,7 +7,9 @@ const ArtistCreationImage = ({ sourceUrl, blurHash, altText }) => {
 
   useEffect(() => {
     const img = new Image();
-    img.onload = () => setIsLoaded(true);
+    img.onload = () => {
+      setTimeout(() => setIsLoaded(true), 700);
+    };
     img.src = sourceUrl;
   }, [sourceUrl]);
 

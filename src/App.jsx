@@ -47,7 +47,10 @@ function App() {
           className="pointer-events-none fixed top-0 left-0 h-screen select-none"
           animate={{
             opacity: selectedImageIndex === -1 ? 1 : 0,
-            transition: { duration: 0.5 },
+            transition: {
+              duration: 0.5,
+              delay: selectedImageIndex === -1 ? 0 : 0.5,
+            },
           }}
         />
         <motion.img
@@ -56,7 +59,10 @@ function App() {
           className="pointer-events-none fixed top-0 right-0 h-screen rotate-180 select-none"
           animate={{
             opacity: selectedImageIndex === -1 ? 1 : 0,
-            transition: { duration: 0.5 },
+            transition: {
+              duration: 0.5,
+              delay: selectedImageIndex === -1 ? 0 : 0.5,
+            },
           }}
         />
 
