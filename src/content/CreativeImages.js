@@ -76,7 +76,8 @@ const creativeImages = [
     twitter: "iskream5",
     image: "/img/iskream5.webp",
     position: [6, -3.5, -1],
-    description: "Iskream is a visual artist based in France.",
+    description:
+      "Iskream is a visual artist based in France. He is known for his recognizable character.",
     gallery: [
       {
         imgSrc: "/img/iskream5/1.webp",
