@@ -21,9 +21,24 @@ const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
       // Si aucune image n'est sélectionnée
       if (selectedImageIndex === -1) {
         const speedFactor = 0.06;
-        cameraRef.current.position.x += mouse.x.get() * speedFactor;
-        cameraRef.current.position.y += mouse.y.get() * speedFactor;
 
+        // MOUVEMENTS SUR L'AXE X
+        if (
+          (cameraRef.current.position.x > -15 && mouse.x.get() < 0) ||
+          (cameraRef.current.position.x < 15 && mouse.x.get() > 0)
+        ) {
+          cameraRef.current.position.x += mouse.x.get() * speedFactor;
+        }
+
+        // MOUVEMENTS SUR L'AXE Y
+        if (
+          (cameraRef.current.position.y > -10 && mouse.y.get() < 0) ||
+          (cameraRef.current.position.y < 10 && mouse.y.get() > 0)
+        ) {
+          cameraRef.current.position.y += mouse.y.get() * speedFactor;
+        }
+
+        // MOUVEMENTS SUR L'AXE Z
         if (cameraRef.current.position.z < 10) {
           cameraRef.current.position.z += 0.1;
         }
