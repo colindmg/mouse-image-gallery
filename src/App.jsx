@@ -45,11 +45,12 @@ function App() {
         <Loader
           containerStyles={{
             backgroundColor: "#f3f4f6",
+            color: "#191919",
           }}
           barStyles={{
             background: "#191919",
             height: "2px",
-            width: "100%",
+            color: "#191919",
           }}
         />
 
