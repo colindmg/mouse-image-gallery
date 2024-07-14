@@ -7,7 +7,6 @@ import { motion } from "framer-motion-3d";
 import PropTypes from "prop-types";
 import { useEffect, useRef, useState } from "react";
 import { TextureLoader } from "three";
-import DynamicImageInfos from "./DynamicImageInfos";
 
 const vertexShader = `
   varying vec2 vUv;
@@ -156,12 +155,12 @@ const DynamicImage = ({
       </motion.mesh>
 
       {/* INFORMATIONS SUR L'IMAGE */}
-      <DynamicImageInfos
+      {/* <DynamicImageInfos
         twitter={imageObject.twitter}
         position={imageObject.position}
         imageScale={imageObject.scale ? imageObject.scale : 1}
         isVisible={selectedImageIndex === imageIndex}
-      />
+      /> */}
     </>
   );
 };

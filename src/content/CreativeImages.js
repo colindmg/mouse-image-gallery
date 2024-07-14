@@ -351,70 +351,89 @@
 
 const creativeImages = [
   {
+    name: "HELL CITY SQUARE T-SHIRT",
     image: "/supram/1.webp",
     position: [0, 0, 1],
   },
   {
+    name: "HIDDEN FACES RACING JACKET",
     image: "/supram/2.webp",
     position: [0, -3, 1],
   },
   {
+    name: "HIDDEN FACES GREEN KNIT SWEATER",
+    description: "100PCS only, ready to ship worldwide.",
+    price: "84,90€",
     image: "/supram/3.webp",
     position: [0, 3, 1],
   },
   {
+    name: "HIDDEN FACES R-NIGHT T-SHIRT",
     image: "/supram/4.webp",
     position: [3, 0, 1],
   },
   {
+    name: "HIDDEN FACES BIKINI T-SHIRT RED",
     image: "/supram/5.webp",
     position: [-3, 0, 1],
   },
   {
+    name: "HIDDEN FACES LIGHT SPRAY TYPE T-SHIRT",
     image: "/supram/6.webp",
     position: [3, 3, 1],
   },
   {
+    name: "HIDDEN FACES CERCLE TYPE T-SHIRT BLUE",
     image: "/supram/7.webp",
     position: [-3, -3, 1],
   },
   {
+    name: "HIDDEN FACES TV T-SHIRT BLUE",
     image: "/supram/8.webp",
     position: [3, -3, 1],
   },
   {
+    name: "HIDDEN FACES TV T-SHIRT WHITE",
     image: "/supram/9.webp",
     position: [-3, 3, 1],
   },
   {
+    name: "DIVINE ORGANIZATION LOGO T-SHIRT BLACK",
     image: "/supram/10.webp",
     position: [0, 6, 1],
   },
   {
+    name: "HIDDEN FACES x WHYNOT TYPES T-SHIRT BLACK",
     image: "/supram/11.webp",
     position: [0, -6, 1],
   },
   {
+    name: "HIDDEN FACES x WHYNOT TYPES T-SHIRT BLUE",
     image: "/supram/12.webp",
     position: [6, 0, 1],
   },
   {
+    name: "SUPRAM by RUBY T-SHIRT",
     image: "/supram/13.webp",
     position: [-6, 0, 1],
   },
   {
+    name: "HIDDEN FACES DUBUCUP",
     image: "/supram/14.webp",
     position: [6, 3, 1],
   },
   {
+    name: "HIDDEN FACES MIMI T-SHIRT WHITE",
     image: "/supram/15.webp",
     position: [-6, -3, 1],
   },
   {
+    name: "HIDDEN FACES R9 MODEL T-SHIRT WHITE",
     image: "/supram/16.webp",
     position: [6, -3, 1],
   },
   {
+    name: "HIDDEN FACES FAKE T-SHIRT",
     image: "/supram/17.webp",
     position: [-6, 3, 1],
   },

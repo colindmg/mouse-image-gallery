@@ -52,28 +52,28 @@ const ArtistDetails = ({
     artistDetails && (
       <>
         {/* NAME & NUMBER OF THE ARTIST */}
-        <div className="absolute top-[13%] left-[13%] flex flex-col gap-1 text-neutral-900 pointer-events-none">
+        <div className="absolute top-[13%] left-[7%] flex flex-col gap-1 text-neutral-900 pointer-events-none max-w-[300px]">
           <motion.p
-            className="text-3xl font-bold tracking-wide"
+            className="text-5xl font-bold font-[Impact] tracking-wide  text-balance"
             initial="hidden"
             animate={imageIndex !== -1 ? "visible" : "hidden"}
             variants={pVariants}
           >
-            No.{artistDetails.number}
+            {artistDetails.name}
           </motion.p>
           <motion.h2
-            className="text-3xl"
+            className="text-lg text-neutral-600"
             initial="hidden"
             animate={imageIndex !== -1 ? "visible" : "hidden"}
             variants={h2Variants}
           >
-            {artistDetails.name}{" "}
+            {artistDetails.price && artistDetails.price}
           </motion.h2>
         </div>
 
         {/* ARTIST DESCRIPTION */}
         {artistDetails.description && (
-          <div className="absolute bottom-[13%] right-[13%] text-neutral-900 pointer-events-none">
+          <div className="absolute bottom-[13%] right-[7%] text-neutral-900 pointer-events-none">
             <p className="text-sm text-right text-balance w-56 max-lg:hidden">
               {artistDetails.description.split(" ").map((word, index) => (
                 <motion.span
@@ -101,7 +101,7 @@ const ArtistDetails = ({
           <motion.img
             src="/icons/close.svg"
             alt="Cross"
-            className="absolute top-[13%] right-[13%] w-10 cursor-pointer"
+            className="absolute top-[13%] right-[7%] w-10 cursor-pointer"
             initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
             animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
             transition={{

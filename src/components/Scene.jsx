@@ -15,7 +15,7 @@ const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
   const mouse = useMouse();
 
   // GESTION DU MOUVEMENT DE LA CAMÉRA QUAND UNE IMAGE EST SÉLECTIONNÉE
-  const zoomZ = 7;
+  const zoomZ = 5;
 
   // USE FRAME D'ANIMATION DE LA CAMÉRA
   useFrame(() => {
@@ -46,7 +46,7 @@ const Scene = ({ selectedImageIndex, setSelectedImageIndex }) => {
         }
       } else {
         const image = creativeImages[selectedImageIndex];
-        const speedFactor = 0.025;
+        const speedFactor = 0.035;
         cameraRef.current.position.x +=
           (image.position[0] - cameraRef.current.position.x) * speedFactor;
         cameraRef.current.position.y +=
