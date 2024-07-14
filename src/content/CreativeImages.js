@@ -352,76 +352,75 @@
 const creativeImages = [
   {
     image: "/supram/1.webp",
-    position: [0, 0, -1],
+    position: [0, 0, 1],
   },
   {
     image: "/supram/2.webp",
-    position: [2, 0, -1],
+    position: [0, -3, 1],
   },
   {
     image: "/supram/3.webp",
-    position: [-2, 0, -1],
+    position: [0, 3, 1],
   },
   {
     image: "/supram/4.webp",
-    position: [4, 0, -1],
+    position: [3, 0, 1],
   },
   {
     image: "/supram/5.webp",
-    position: [-4, 0, -1],
+    position: [-3, 0, 1],
   },
   {
     image: "/supram/6.webp",
-    position: [0, 2, -1],
+    position: [3, 3, 1],
   },
   {
     image: "/supram/7.webp",
-    position: [0, -2, -1],
+    position: [-3, -3, 1],
   },
   {
     image: "/supram/8.webp",
-    position: [0, 4, -1],
+    position: [3, -3, 1],
   },
   {
     image: "/supram/9.webp",
-    position: [0, -4, -1],
+    position: [-3, 3, 1],
   },
   {
     image: "/supram/10.webp",
-    position: [2, 2, -1],
+    position: [0, 6, 1],
   },
   {
     image: "/supram/11.webp",
-    position: [-2, 2, -1],
+    position: [0, -6, 1],
   },
   {
     image: "/supram/12.webp",
-    position: [2, -2, -1],
+    position: [6, 0, 1],
   },
   {
     image: "/supram/13.webp",
-    position: [-2, -2, -1],
+    position: [-6, 0, 1],
   },
   {
     image: "/supram/14.webp",
-    position: [4, 2, -1],
+    position: [6, 3, 1],
   },
   {
     image: "/supram/15.webp",
-    position: [-4, 2, -1],
+    position: [-6, -3, 1],
   },
   {
     image: "/supram/16.webp",
-    position: [4, -2, -1],
+    position: [6, -3, 1],
   },
   {
     image: "/supram/17.webp",
-    position: [-4, -2, -1],
+    position: [-6, 3, 1],
   },
-  {
-    image: "/supram/18.webp",
-    position: [2, 4, -1],
-  },
+  // {
+  //   image: "/supram/18.webp",
+  // },
 ];
 
 export default creativeImages;

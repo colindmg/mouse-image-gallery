@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-      <div className="h-screen w-screen relative bg-gray-100 max-[520px]:hidden">
+      <div className="h-screen w-screen relative bg-white max-[520px]:hidden">
         <Canvas>
           <Suspense fallback={null}>
             <Scene
