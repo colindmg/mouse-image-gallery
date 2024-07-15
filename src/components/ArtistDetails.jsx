@@ -136,7 +136,7 @@ const ArtistDetails = ({
         {/* SIZE & ADD TO CART BUTTONS */}
         <div className="flex flex-col absolute bottom-[13%] left-[7%]">
           {/* SIZE BUTTONS */}
-          <div className="flex gap-3">
+          <div className="flex justify-between">
             {sizes.map((size, index) => (
               <motion.button
                 key={size}
@@ -157,6 +157,19 @@ const ArtistDetails = ({
               </motion.button>
             ))}
           </div>
+
+          {/* CART BUTTON */}
+          <motion.button
+            className="text-sm text-white uppercase bg-neutral-900 py-2 px-4 mt-3 cursor-pointer"
+            initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
+            animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
+            transition={{
+              duration: imageIndex === -1 ? 0.5 : 0.8,
+              delay: imageIndex === -1 ? 0 : 1.5,
+            }}
+          >
+            Add to Cart
+          </motion.button>
         </div>
       </>
     )
