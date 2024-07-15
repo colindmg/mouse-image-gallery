@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useState } from "react";
+const sizes = ["XS", "S", "M", "L", "XL"];
 
 const ArtistDetails = ({
   artistDetails,
@@ -47,6 +49,9 @@ const ArtistDetails = ({
       },
     },
   };
+
+  // GESTION DU CHOIX DE LA TAILLE (FICTIF)
+  const [selectedSize, setSelectedSize] = useState("M");
 
   return (
     artistDetails && (
@@ -127,6 +132,32 @@ const ArtistDetails = ({
             />
           </a>
         )}
+
+        {/* SIZE & ADD TO CART BUTTONS */}
+        <div className="flex flex-col absolute bottom-[13%] left-[7%]">
+          {/* SIZE BUTTONS */}
+          <div className="flex gap-3">
+            {sizes.map((size) => (
+              <motion.button
+                key={size}
+                className={`text-sm ${
+                  size === selectedSize
+                    ? "text-neutral-900 font-semibold"
+                    : "text-neutral-600"
+                }`}
+                initial={{ opacity: imageIndex !== -1 ? 0 : 1 }}
+                animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
+                transition={{
+                  duration: imageIndex === -1 ? 0.5 : 0.8,
+                  delay: imageIndex === -1 ? 0 : 1,
+                }}
+                onClick={() => setSelectedSize(size)}
+              >
+                {size}
+              </motion.button>
+            ))}
+          </div>
+        </div>
       </>
     )
   );
