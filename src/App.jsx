@@ -80,6 +80,20 @@ function App() {
           }}
         />
 
+        {/* LOGO DE SUPRAM */}
+        <motion.img
+          src="/supram/logo.png"
+          alt="Logo de Supram"
+          className="pointer-events-none fixed top-[5%] left-[5%] w-16"
+          animate={{
+            opacity: selectedImageIndex === -1 ? 1 : 0,
+            transition: {
+              duration: 0.5,
+              delay: selectedImageIndex === -1 ? 1 : 0,
+            },
+          }}
+        />
+
         {/* ARTIST DETAILS */}
         <ArtistDetails
           artistDetails={selectedImageObject}

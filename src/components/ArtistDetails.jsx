@@ -137,7 +137,7 @@ const ArtistDetails = ({
         <div className="flex flex-col absolute bottom-[13%] left-[7%]">
           {/* SIZE BUTTONS */}
           <div className="flex gap-3">
-            {sizes.map((size) => (
+            {sizes.map((size, index) => (
               <motion.button
                 key={size}
                 className={`text-sm ${
@@ -149,7 +149,7 @@ const ArtistDetails = ({
                 animate={{ opacity: imageIndex === -1 ? 0 : 1 }}
                 transition={{
                   duration: imageIndex === -1 ? 0.5 : 0.8,
-                  delay: imageIndex === -1 ? 0 : 1,
+                  delay: imageIndex === -1 ? 0 : index * 0.1 + 1,
                 }}
                 onClick={() => setSelectedSize(size)}
               >
