@@ -437,9 +437,26 @@ const creativeImages = [
     image: "/supram/17.webp",
     position: [-6, 3, 1],
   },
-  // {
-  //   image: "/supram/18.webp",
-  // },
+  {
+    name: "HIDDEN FACES SPRAY LOGO T-SHIRT",
+    image: "/supram/18.webp",
+    position: [3, 6, 1],
+  },
+  {
+    name: "HIDDEN FACES ZIP-UP BLUE HOODIE",
+    image: "/supram/19.webp",
+    position: [-3, -6, 1],
+  },
+  {
+    name: "HIDDEN FACES TOGA",
+    image: "/supram/20.webp",
+    position: [3, -6, 1],
+  },
+  {
+    name: "BRED PEACE FULL ZIP HOODIE",
+    image: "/supram/21.webp",
+    position: [-3, 6, 1],
+  },
 ];
 
 export default creativeImages;

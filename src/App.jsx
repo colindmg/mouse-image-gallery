@@ -82,7 +82,7 @@ function App() {
 
         {/* LOGO DE SUPRAM */}
         <motion.img
-          src="/supram/logo.png"
+          src="/supram/logo.webp"
           alt="Logo de Supram"
           className="pointer-events-none fixed top-[5%] left-[5%] w-16"
           animate={{
