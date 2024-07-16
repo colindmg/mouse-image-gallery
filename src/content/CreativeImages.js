@@ -362,7 +362,7 @@ const creativeImages = [
   },
   {
     name: "HIDDEN FACES GREEN KNIT SWEATER",
-    description: "100PCS only, ready to ship worldwide.",
+    description: "100PCS only, ready to ship worldwide. Oversized Fit.",
     price: "84,90€",
     image: "/supram/3.webp",
     position: [0, 3, 1],
@@ -439,6 +439,8 @@ const creativeImages = [
   },
   {
     name: "HIDDEN FACES SPRAY LOGO T-SHIRT",
+    description:
+      "Classic logo, 100% Cotton. DTG printing. Print in France, Nantes & made in Maroc.",
     image: "/supram/18.webp",
     position: [3, 6, 1],
   },

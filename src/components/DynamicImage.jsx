@@ -16,8 +16,8 @@ const vertexShader = `
   void main() {
     vUv = uv;
     vec3 newPosition = position;
-    newPosition.x += sin(uv.y * PI) * uDelta.x * 0.1;
-    newPosition.y += sin(uv.x * PI) * uDelta.y * 0.1;
+    newPosition.x += sin(uv.y * PI) * uDelta.x * 0.5;
+    newPosition.y += sin(uv.x * PI) * uDelta.y * 0.5;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   }
 `;
@@ -84,8 +84,8 @@ const DynamicImage = ({
   }, [isTransparent, imageIndex, opacity]);
 
   // ANIMATION DE COURBURE DE L'IMAGE
-  const uDeltaX = useSpring(0, { stiffness: 100, damping: 30 });
-  const uDeltaY = useSpring(0, { stiffness: 100, damping: 30 });
+  const uDeltaX = useSpring(0, { stiffness: 500, damping: 50 });
+  const uDeltaY = useSpring(0, { stiffness: 500, damping: 50 });
 
   useFrame(() => {
     if (camera) {
