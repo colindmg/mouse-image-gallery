@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-      <div className="h-screen w-screen relative bg-white max-[520px]:hidden">
+      <div className="h-screen w-screen relative bg-gray-100 max-[520px]:hidden">
         <Canvas>
           <Suspense fallback={null}>
             <Scene
@@ -76,20 +76,6 @@ function App() {
             transition: {
               duration: 0.5,
               delay: selectedImageIndex === -1 ? 0 : 0.5,
-            },
-          }}
-        />
-
-        {/* LOGO DE SUPRAM */}
-        <motion.img
-          src="/supram/logo.webp"
-          alt="Logo de Supram"
-          className="pointer-events-none fixed top-[5%] left-[5%] w-16"
-          animate={{
-            opacity: selectedImageIndex === -1 ? 1 : 0,
-            transition: {
-              duration: 0.5,
-              delay: selectedImageIndex === -1 ? 1 : 0,
             },
           }}
         />
